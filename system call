@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<unistd.h>
+
+int main() {
+    fork();
+    printf("Process ID: %d\n", getpid());
+    return 0;
+}
+
+#include<stdio.h>
+#include<unistd.h>
+
+int main() {
+    execl("/bin/ls","ls",NULL);
+    return 0;
+}
+
+#include<stdio.h>
+#include<dirent.h>
+
+int main() {
+    DIR *d;
+    struct dirent *dir;
+    d = opendir(".");
+    while ((dir = readdir(d)) != NULL)
+        printf("%s\n", dir->d_name);
+    closedir(d);
+    return 0;
+}
+
