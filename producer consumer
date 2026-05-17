@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int buffer = 0, size = 5;
+    int choice;
+
+    while(1) {
+        printf("\n1. Produce\n2. Consume\n3. Exit\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 1) {
+            if(buffer < size) {
+                buffer++;
+                printf("Produced an item. Buffer = %d", buffer);
+            } else {
+                printf("Buffer is Full!");
+            }
+        }
+        else if(choice == 2) {
+            if(buffer > 0) {
+                buffer--;
+                printf("Consumed an item. Buffer = %d", buffer);
+            } else {
+                printf("Buffer is Empty!");
+            }
+        }
+        else {
+            break;
+        }
+    }
+    return 0;
+}
